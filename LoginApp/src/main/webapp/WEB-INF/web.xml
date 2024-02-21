@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>LoginApp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>db_url</param-name>
+    <param-value>jdbc:mysql://localhost:3306/cms</param-value>
+  </context-param>
+  <context-param>
+    <param-name>db_username</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>db_password</param-name>
+    <param-value>Prasanna@5030</param-value>
+  </context-param>
+  <servlet>
+    <description></description>
+    <display-name>loginServlet</display-name>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>com.login.demo.loginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+  <listener>
+    <listener-class>com.login.listeners.dbListener</listener-class>
+  </listener>
+  <servlet>
+    <description></description>
+    <display-name>registrationServlet</display-name>
+    <servlet-name>registrationServlet</servlet-name>
+    <servlet-class>com.login.demo.registrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>registrationServlet</servlet-name>
+    <url-pattern>/registrationServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
